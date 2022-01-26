@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function verificarRueda(grosor,diametro){
+            // Si los definimos así: 
+            // var grosor = 0.4
+            // var diametro = 1.4
+            // grosor y diametro siempre tendran ese valor (estaticos)
+            if((diametro>1.4 && grosor<0.4) || ((diametro<=1.4 && diametro>0.8) && grosor<0.25)){
+                console.log("El grosor para esta rueda es inferior al recomendado")
+            }else if(diametro>1.4){
+                console.log("La rueda es para un vehículo grande")
+            }else if(diametro<=1.4 && diametro>0.8){
+                //0.8<diametro<=1.4 otra condición valida
+                console.log("La rueda es para un vehículo mediano")
+            }else{
+                console.log("La rueda es para un vehículo pequeño")
+            }
+        }
+
+        prompt("Ingresa un valor:")
+        verificarRueda(0.4,1.4)
+
+        // Lineas de código
+        verificarRueda(0.3,1.5)
+        
+        // Lineas de código
+
+        verificarRueda(0.6,1.5)
+
+
+    </script>
+</body>
+</html>
