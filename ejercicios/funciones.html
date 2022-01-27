@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Sabes cuántos años tiene tu perro en años humanos, pero ¿qué pasa con los años de perro? ¡Calcúlalo!
+
+        Escribe una función que se llame calculateDogAge así:
+        toma 1 argumento: la edad de tu cachorro.
+        calcula la edad de su perro basándose en la tasa de conversión de 1 año humano a 7 años de perro.
+        muestra el resultado en la pantalla de la siguiente manera: "¡Tu perrito tiene NN años en años de perro!"
+        Llame a la función tres veces con diferentes conjuntos de valores.
+        Bonificación : agregue un argumento adicional a la función que toma la tasa de conversión de años humanos a perros.
+        */
+
+        
+        function calculateDogAge(age,tasaConversion){
+            if(tasaConversion){
+                var conversion = age * tasaConversion
+                //var mensaje = "¡Tu perrito tiene "+conversion+" años en años de perro!"
+                // Template string o template literal
+                var mensaje = `¡Tu perrito tiene ${conversion} años en años de perro! Tasa conversion: ${tasaConversion}` // backticks
+            }else{
+                var conversion = age * 7
+                //var mensaje = "¡Tu perrito tiene "+conversion+" años en años de perro!"
+                // Template string o template literal
+                var mensaje = `¡Tu perrito tiene ${conversion} años en años de perro! Tasa conversion: ${7}` // backticks
+                
+            }
+            console.log(mensaje)
+            
+            // //var mensaje = "¡Tu perrito tiene "+conversion+" años en años de perro!"
+            // // Template string o template literal
+            // var mensaje = `¡Tu perrito tiene ${conversion} años en años de perro! Tasa conversion: ${tasaConversion}` // backticks
+
+            // console.log(mensaje)
+        }
+
+        // tasaConversion: default param
+        function calculateDogAgeV2(age,tasaConversion=7){
+            var conversion = age * tasaConversion
+            //var mensaje = "¡Tu perrito tiene "+conversion+" años en años de perro!"
+            // Template string o template literal
+            var mensaje = `¡Tu perrito tiene ${conversion} años en años de perro! Tasa conversion: ${tasaConversion}`
+            // backticks ``
+            console.log(mensaje)
+
+            return conversion
+        }
+
+        calculateDogAge(5)
+        calculateDogAge(10)
+        calculateDogAge(1,5)
+        var edad1 = calculateDogAgeV2(5)
+        var edad2 = calculateDogAgeV2(10)
+        var edad3 = calculateDogAgeV2(1,5)
+
+        console.log("Mi mascota Lulu tiene:",edad1)
+        console.log("Mi mascota Tyson tiene:",edad2)
+        console.log("Mi mascota Lulu tiene:",edad3)
+    </script>
+</body>
+</html>
