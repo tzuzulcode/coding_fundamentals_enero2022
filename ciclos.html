@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos</title>
+</head>
+<body>
+    <script>
+
+        var numeroInicio = 1
+        var numeroFinal = 10 
+
+        //while recibe una expresión: condición
+        // mientras se cumpla la condición
+        while(numeroInicio<=numeroFinal){
+            console.log(numeroInicio)
+            // numeroInicio = numeroInicio + 3
+
+            // Operador de incremento: += -=
+            // numeroInicio+=3
+
+            // Operador 
+            numeroInicio++ // post-increment
+        }
+
+        numeroInicio = 10
+        numeroFinal = 1
+        // Ciclo al revés
+        while(numeroInicio>=numeroFinal){
+            console.log(numeroInicio)
+            //numeroInicio-=1
+            numeroInicio--
+        }
+        console.log("Terminó el ciclo")
+
+        //Escriba un programa en JavaScript para encontrar la suma de los primeros 10 números naturales.
+        var suma = 0
+        var numero = 1
+
+
+        while(numero<=5){
+            suma = suma + numero
+            numero++
+        }
+
+        console.log(suma)
+
+        //Escriba un programa en JS para leer 10 números del teclado y encontrar su suma y promedio.
+    </script>
+</body>
+</html>
