@@ -46,8 +46,22 @@
         }
 
         console.log(suma)
-
+        
         //Escriba un programa en JS para leer 10 números del teclado y encontrar su suma y promedio.
+
+        var repeticion = 1
+        var suma = 0
+        while(repeticion<=5){
+            numeroUsuario = prompt("Ingresa un numero")
+            conversion = parseFloat(numeroUsuario) // convertir a numeros con decimales
+            console.log(typeof conversion) // Mostramos de que tipo es algo
+            suma += conversion
+            repeticion++
+        }
+
+        console.log(suma)
+        var promedio = suma / 5
+        console.log(promedio)
     </script>
 </body>
 </html>
