@@ -62,6 +62,23 @@
         console.log(suma)
         var promedio = suma / 5
         console.log(promedio)
+
+
+        repeticion = 1
+        while(true){
+            if(repeticion<5){
+                console.log("Mi ciclo infinito")
+                repeticion++
+            }else if(repeticion==5){
+                repeticion++
+                continue
+            }else if(repeticion<10){
+                console.log(repeticion)
+                repeticion++
+            }else{
+                break;
+            }
+        }
     </script>
 </body>
 </html>
