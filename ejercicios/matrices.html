@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var matrizAlumnos = [
+            ["Gustavo",10,10,10,10],
+            ["Nicolas",10,9,10,9]
+        ]
+
+        // matrizAlumnos.length -> numero de filas
+        for(var i=0;i<matrizAlumnos.length;i++){
+            //console.log(matrizAlumnos[i])
+            var suma = matrizAlumnos[i][1]+matrizAlumnos[i][2]+matrizAlumnos[i][3]+matrizAlumnos[i][4]
+
+            var promedio = suma/(matrizAlumnos[i].length-1) // Ponemos parentesis para que se evalue primero
+            //Numero de columnas
+            // for (var j = 0;j<matrizAlumnos[i].length;j++){
+
+            // }
+
+            var mensaje = `${matrizAlumnos[i][0]}. Promedio: ${promedio}`
+            console.log(mensaje)
+        }
+
+
+        // Reto: Hacerlo dinámico y ponerlo en una función
+    </script>
+</body>
+</html>
