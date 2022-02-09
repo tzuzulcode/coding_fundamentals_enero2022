@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Rellenando matriz con un prompt
+        var matriz = []
+
+        var numeroAlumnos = Number(prompt("Ingresa el número de alumnos"))
+        var numeroDatos = Number(prompt("Ingresa el número de datos"))
+
+        for(var i=0;i<numeroAlumnos;i++){
+            var datos = []
+            for(var j=0;j<numeroDatos;j++){
+                if(j===0){
+                    datos[j] = prompt("Ingresa el nombre:")
+                }else{
+                    var datoUsuario = prompt("Ingresa la calificación:")
+                    datos[j] = parseInt(datoUsuario) // Conversion de String a Int
+                }
+                
+            }
+            console.log(datos)
+
+            matriz[i] = datos
+        }
+
+        console.log(matriz)
+        //Reto: Resolver staircase
+    </script>
+</body>
+</html>

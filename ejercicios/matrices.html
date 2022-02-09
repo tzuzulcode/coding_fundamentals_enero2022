@@ -8,25 +8,39 @@
 </head>
 <body>
     <script>
+
+        function calcularPromedio(matriz){
+            for(var i=0;i<matriz.length;i++){
+            //console.log(matrizAlumnos[i])
+                var suma = 0
+
+                //Numero de columnas
+                for (var j = 1;j<matriz[i].length;j++){
+                    //suma = suma + matrizAlumnos[i][j]
+                    suma += matriz[i][j]
+                }
+
+                var promedio = suma/(matriz[i].length-1) // Ponemos parentesis para que se evalue primero
+                
+                var mensaje = `${matriz[i][0]}. Promedio: ${promedio}`
+                console.log(mensaje)
+            }
+        }
+
         var matrizAlumnos = [
             ["Gustavo",10,10,10,10],
             ["Nicolas",10,9,10,9]
         ]
+        var matrizAlumnos2 = [
+            ["Gerardo",7,10,9,10],
+            ["Diana",10,9,10,10]
+        ]
 
         // matrizAlumnos.length -> numero de filas
-        for(var i=0;i<matrizAlumnos.length;i++){
-            //console.log(matrizAlumnos[i])
-            var suma = matrizAlumnos[i][1]+matrizAlumnos[i][2]+matrizAlumnos[i][3]+matrizAlumnos[i][4]
+        
 
-            var promedio = suma/(matrizAlumnos[i].length-1) // Ponemos parentesis para que se evalue primero
-            //Numero de columnas
-            // for (var j = 0;j<matrizAlumnos[i].length;j++){
-
-            // }
-
-            var mensaje = `${matrizAlumnos[i][0]}. Promedio: ${promedio}`
-            console.log(mensaje)
-        }
+        calcularPromedio(matrizAlumnos)
+        calcularPromedio(matrizAlumnos2)
 
 
         // Reto: Hacerlo dinámico y ponerlo en una función
