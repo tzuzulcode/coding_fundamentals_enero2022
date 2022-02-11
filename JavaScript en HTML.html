@@ -1,0 +1,62 @@
+<!-- Esto nos indica que utilizamos HTML5 -->
+<!DOCTYPE html>
+
+<!-- Nos indica la raiz del documento -->
+<html lang="es">
+
+<!-- Cosas del navegador -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <!-- CSS Styles -->
+    <style>
+
+    </style>
+</head>
+
+<!-- Todo el contenido -->
+<body>
+    <!-- Headings -->
+    <h1 id="bienvenida">Hola</h1>
+    <div id="saludo">
+    </div>
+    <h2>Hola</h2>
+    <h3>Hola</h3>
+    <h4>Hola</h4>
+    <h5>Hola</h5>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita aperiam ullam quaerat quibusdam rerum, omnis culpa quam a velit ratione dolores. Eius delectus aperiam at nesciunt animi. Voluptatum laboriosam distinctio dolores vel quas! Officiis sequi vitae recusandae iste maiores obcaecati placeat expedita sint illum reprehenderit esse, repellat quis ut repellendus? Nobis voluptatum magni, repudiandae expedita fuga assumenda excepturi ipsum tenetur ullam consectetur natus veniam reprehenderit molestias architecto aliquam! Nesciunt magnam minus corrupti culpa, alias veritatis repellendus omnis. Possimus eligendi inventore nemo, consectetur minus corrupti ex dolore veniam quisquam temporibus? Atque ullam perferendis voluptatibus corporis quod soluta ipsum expedita? Eius, delectus?</p>
+    <a href="https://google.com">Ir a algun lugar</a>
+
+
+    <script>
+        // getElementById Obtiene un elemento de html por su id
+        var bienvenida = document.getElementById("bienvenida")
+        console.log(bienvenida)
+        // Añadiendo eventos
+
+        function hacerAlgo(){
+            console.log("Diste click")
+            var nombre = prompt("Ingresa tu nombre")
+
+            bienvenida.innerText = "Bienvenido, "+nombre
+
+            var saludo = document.getElementById("saludo")
+            saludo.innerHTML = `
+                <h1>Saludos, ${nombre}</h1>
+                <p>Eres el visitante 1</p>
+            `
+
+            //document.write("SALUDOS")
+
+            bienvenida.removeEventListener("click",hacerAlgo,true)
+        }
+
+        bienvenida.addEventListener("click",hacerAlgo,true)
+        //bienvenida.onclick = hacerAlgo
+
+
+    </script>
+</body>
+</html>
