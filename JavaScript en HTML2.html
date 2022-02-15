@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        .saludo{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+        }
+        .saludo-presionado{
+            background-color: deeppink;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="saludo">
+        Hola
+    </div>
+    <div class="saludo">
+        Hola
+    </div>
+    <div class="saludo">
+        Hola
+    </div>
+    <div class="saludo">
+        Hola
+    </div>
+    <script>
+        var divsSaludo = document.getElementsByClassName("saludo")
+        console.log(divsSaludo)
+        console.log(divsSaludo[0])
+        // divsSaludo[0].onclick = function(){
+        //     alert("Hola")
+        // }
+        // divsSaludo[1].onclick = function(){
+        //     alert("Hola")
+        // }
+        // Es lo mismo que hacer lo de abajo
+
+        // for(var i = 0; i<divsSaludo.length;i++){
+        //     divsSaludo[i].onclick = function(){
+        //         alert("Hola")
+        //         console.log(divsSaludo[i])
+        //         console.log(i)
+        //         divsSaludo[i].className = "saludo-presionado"
+        //     }
+        // }
+        for(let i = 0; i<divsSaludo.length;i++){
+            divsSaludo[i].onclick = function(){
+                alert("Hola")
+                console.log(divsSaludo[i])
+                console.log(i)
+                divsSaludo[i].className = "saludo-presionado"
+                divsSaludo[i].classList
+            }
+        }
+
+        // let y const
+        let miVariable = 5 // Alcance de bloque
+
+        // const: constante
+        const miConstante = 5
+
+        //Jose Alexis
+        // David Pérez
+        // classList y Style
+    </script>
+</body>
+</html>
