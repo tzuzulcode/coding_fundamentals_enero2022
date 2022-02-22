@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #semaforo{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="semaforo" class="amarillo"></div>
+    <button id="start">Iniciar</button>
+    <button id="stop">Detener</button>
+
+    <script>
+        const semaforo = document.getElementById("semaforo")
+        const startButton = document.getElementById("start")
+        const stopButton = document.getElementById("stop")
+
+        let intervaloSemaforo
+
+        startButton.onclick = function(){
+
+            //Hacer lo mismo con la propiedad style de JS
+            intervaloSemaforo = setInterval(function(){
+                if(semaforo.className == "amarillo"){
+                    semaforo.className="rojo"
+                }else if(semaforo.className == "rojo"){
+                    semaforo.className="verde"
+                }else if(semaforo.className == "verde"){
+                    semaforo.className="amarillo"
+                }
+            },1000)
+
+            //setTimeout() // Una sola vez
+            
+        }
+
+        stopButton.onclick = function(){
+            clearInterval(intervaloSemaforo)
+        }
+    </script>
+</body>
+</html>

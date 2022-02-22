@@ -32,9 +32,11 @@
         Hola
     </div>
     <script>
-        var divsSaludo = document.getElementsByClassName("saludo")
-        console.log(divsSaludo)
-        console.log(divsSaludo[0])
+        let divsSaludo = document.getElementsByClassName("saludo") //Devuelve una Collection
+
+
+        // console.log(divsSaludo)
+        // console.log(divsSaludo[0])
         // divsSaludo[0].onclick = function(){
         //     alert("Hola")
         // }
@@ -52,12 +54,14 @@
         //     }
         // }
         for(let i = 0; i<divsSaludo.length;i++){
-            divsSaludo[i].onclick = function(){
-                alert("Hola")
-                console.log(divsSaludo[i])
-                console.log(i)
-                divsSaludo[i].className = "saludo-presionado"
-                divsSaludo[i].classList
+            let div = divsSaludo[i]
+            div.onclick = function(){
+                //alert("Hola")
+                // console.log(divsSaludo[i])
+                // console.log(i)
+                div.className = "saludo saludo-presionado"
+                //div.classList.add("saludo-presionado")
+                console.log(divsSaludo)
             }
         }
 
@@ -70,6 +74,8 @@
         //Jose Alexis
         // David Pérez
         // classList y Style
+
+
     </script>
 </body>
 </html>
