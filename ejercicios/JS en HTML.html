@@ -9,12 +9,22 @@
         #semaforo{
             width: 200px;
             height: 200px;
+            background-color: yellow;
         }
+        /* .rojo{
+            background-color: red;
+        }
+        .amarillo{
+            background-color: yellow;
+        }
+        .verde{
+            background-color: greenyellow;
+        } */
     </style>
 </head>
 <body>
 
-    <div id="semaforo" class="amarillo"></div>
+    <div id="semaforo"></div>
     <button id="start">Iniciar</button>
     <button id="stop">Detener</button>
 
@@ -23,18 +33,28 @@
         const startButton = document.getElementById("start")
         const stopButton = document.getElementById("stop")
 
+        let color = "yellow"
+
+        semaforo.style.backgroundColor = "yellow"
+
         let intervaloSemaforo
 
         startButton.onclick = function(){
 
             //Hacer lo mismo con la propiedad style de JS
             intervaloSemaforo = setInterval(function(){
-                if(semaforo.className == "amarillo"){
-                    semaforo.className="rojo"
-                }else if(semaforo.className == "rojo"){
-                    semaforo.className="verde"
-                }else if(semaforo.className == "verde"){
-                    semaforo.className="amarillo"
+                //console.log("Cambio color",getComputedStyle(semaforo).backgroundColor)
+                //let color = semaforo.style.backgroundColor
+                if(color=="yellow"){
+                    // Pongo red, porque es el color de css
+                    semaforo.style.backgroundColor = "red"
+                    color = "red"
+                }else if(color=="red"){
+                    semaforo.style.backgroundColor = "greenyellow"
+                    color="green"
+                }else if(color=="green"){
+                    semaforo.style.backgroundColor = "yellow"
+                    color="yellow"
                 }
             },1000)
 
