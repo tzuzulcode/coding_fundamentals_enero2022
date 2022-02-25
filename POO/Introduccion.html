@@ -13,11 +13,37 @@
         // ¿Qué es la Abstracción?
 
         //Abstracción: Plasmar algo real (Atributos, metodos,estado) en codigo
+        // Object literal
         const tzuzul = {
             name:"Tzuzul",
             edad:23,
             genero:"Masculino",
-            ciudad:"Ciudad de México",
+            casado:false,
+            direccion:{
+                calle:"Calle",
+                numero:1213,
+                cp:100101,
+                colonia:"COlonia",
+                ciudad:"Ciudad de México"
+            },
+            gustos:["Música","Programación","Videojuegos","Libros"],
+            saludar(){
+                console.log("Hola")
+            }
+        }// Esto es un objeto
+
+        const miguel = {
+            name:"Miguel",
+            edad:23,
+            genero:"Masculino",
+            casado:false,
+            direccion:{
+                calle:"Calle",
+                numero:1213,
+                cp:100101,
+                colonia:"COlonia",
+                ciudad:"Ciudad de México"
+            },
             gustos:["Música","Programación","Videojuegos","Libros"],
             saludar(){
                 console.log("Hola")
@@ -27,7 +53,37 @@
         console.log(tzuzul.gustos)
         tzuzul.saludar()
 
+        console.log("Codigo postal: ",tzuzul.direccion.cp)
+
         // Crear un auto: Atributos y métodos
+
+        //Usando new:
+        // Usando new con constructores de JS
+        let objeto = new Object()
+        objeto.nombre = "Miguel"
+        let arreglo = new Array()
+        let date = new Date()
+        let map = new Map()
+
+        console.log(miguel)
+        console.log(objeto)
+        console.log(arreglo)
+        console.log(date)
+        console.log(map)
+
+        let brayan = Object.create({
+            nombre:"Brayan",
+            edad:25
+        })
+
+        console.log(brayan.nombre)
+        console.log(miguel["name"])
+
+        miguel["nombre del padre"] = "Miguel"
+
+        console.log(miguel["nombre del padre"])
+
+        //TODO: Hablar de prototypes
     </script>
 </body>
 </html>
