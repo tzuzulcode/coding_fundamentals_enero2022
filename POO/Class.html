@@ -10,39 +10,83 @@
     <script>
         //ES6 class
 
+        //let nombre = "Tzuzul"
+
         class Persona{
-            nombre = "Tzuzul"
-            edad = 23
-            direccion={
-                calle:"Calle",
-                numero:1213,
-                cp:100101,
-                colonia:"COlonia",
-                ciudad:"Ciudad de México"
+            // No es necesario realizar este pas
+            // nombre
+            // edad
+            // direccion
+            // gustos
+
+            //Función constructora
+            // Al momento de la creación de la instacia de esta clase, se ejecuta este metodo
+            constructor(nombre,edad,direccion,gustos){
+                console.log("Creando el objeto...")
+                this.nombre = nombre // Si existe la propiedad nombre en la clase, reemplaza el valor. Sino, crea la propiedad
+                this.edad = edad
+                this.direccion = direccion
+                this.gustos = gustos
             }
-            gustos = ["Música","Programación","Videojuegos","Libros"]
 
             saludar(){
-                console.log("Hola")
+                console.log("Hola, soy",this.nombre)
             }
 
             saludar2(){
                 console.log("Hola")
             }
+
+            despedir(){
+                console.log("Adios...")
+            }
         }
 
-        const tzuzul = new Persona()
-        const miguel = new Persona()
-        const miguel = new Persona()
-        const miguel = new Persona()
-        const miguel = new Persona()
-        const miguel = new Persona()
-        const miguel = new Persona()
+        class Auto{
+            constructor(){
+
+            }
+        }
+
+        const tzuzul = new Persona("Tzuzul",23,{
+                calle:"Calle",
+                numero:1213,
+                cp:100101,
+                colonia:"COlonia",
+                ciudad:"Ciudad de México"
+            }, ["Música","Programación","Videojuegos","Libros"])
+        const miguel = new Persona("Miguel",25,{
+                calle:"Calle",
+                numero:1213,
+                cp:100101,
+                colonia:"COlonia",
+                ciudad:"Ciudad de México"
+            },["Música","Programación","Videojuegos","Libros"])
+        const gerardo = new Persona("Gerardo",25,{
+                calle:"Calle",
+                numero:1213,
+                cp:100101,
+                colonia:"COlonia",
+                ciudad:"Ciudad de México"
+            },["Música","Programación","Videojuegos","Libros"])
 
         console.log(tzuzul)
-        console.log(tzuzul)
+        console.log(miguel)
 
-        //Reto: Crear la clase de Auto
+
+        //Podriamos realizar esto, pero es muy largo de realizar
+        // tzuzul.nombre = "Tzuzul"
+        // tzuzul.edad = 23
+        // tzuzul.gustos = ["Música","Programación","Videojuegos","Libros"]
+
+        // miguel.nombre = "Miguel"
+        // miguel.edad = 25
+        // miguel.gustos = ["Música","Programación","Videojuegos","Libros"]
+
+        console.log(gerardo)
+
+
+        //Reto: Crear la clase de Auto. Con atributos y metodos y un constructor
     </script>
 </body>
 </html>
