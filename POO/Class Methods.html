@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nombre,edad){
+                this.nombre = nombre
+                this.edad = edad
+                this.gustos = ["Música","Programación","Videojuegos","Libros"]
+            }
+
+            toString(){
+                return `Mi nombre es ${this.nombre}, tengo ${this.edad} años`
+            }
+
+            includes(gusto){
+                for(let g of this.gustos){
+                    if(g===gusto){
+                        return true
+                    }
+                }
+
+                return false
+            }
+
+            //TODO:Regresar para ver iteradores
+        }
+
+        const diana = new Persona("Diana",23)
+        console.log(diana)
+
+        const nombrePersona = "Diana"
+
+        if(diana=="Mi nombre es Diana, tengo 23 años"){
+            console.log("Son iguales")
+        }
+
+        console.log(diana.toString())
+        console.log(diana.includes("Música"))
+    </script>
+</body>
+</html>

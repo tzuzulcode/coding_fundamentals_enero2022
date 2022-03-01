@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nombre,edad){
+                this.nombre = nombre
+                this.edad = edad
+            }
+        }
+
+        class Empleado extends Persona{
+            constructor(nombre,edad,numeroEmpleado,cargo,empresa){
+                // super() es el constructor de la clase Persona
+                super(nombre,edad)
+                this.numeroEmpleado = numeroEmpleado
+                this.cargo = cargo
+                this.empresa = empresa
+            }
+        }
+
+        const empleado1 = new Empleado("Karina",23,1,"Gerente","Amazon")
+        const empleado2 = new Empleado("Ricardo",25,2,"Gerente","Amazon")
+
+        console.log(empleado1)
+        console.log(empleado2)
+    </script>
+</body>
+</html>
