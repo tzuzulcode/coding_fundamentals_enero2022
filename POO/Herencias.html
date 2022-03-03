@@ -13,6 +13,23 @@
                 this.nombre = nombre
                 this.edad = edad
             }
+
+            saludar(){
+                console.log("Hola")
+            }
+        }
+
+        class NoEmpleado extends Persona{
+            constructor(nombre,edad,cv){
+                super(nombre,edad)
+                this.cv = cv
+            }
+
+            enviarCurriculum(){
+                this.saludar() // Metiodo de la clase Persona
+                console.log("Mi nombre es: ",this.nombre)
+                console.log("Enviando curriculum...")
+            }
         }
 
         class Empleado extends Persona{
@@ -23,13 +40,40 @@
                 this.cargo = cargo
                 this.empresa = empresa
             }
+
+            cobrarDinero(){
+                console.log("Cobrando dinero...")
+            }
+        }
+
+        class Desarrollador extends Empleado{
+            constructor(nombre,edad,numeroEmpleado,cargo,empresa,nivel,lenguajes){
+                super(nombre,edad,numeroEmpleado,cargo,empresa)
+                this.nivel = nivel
+                this.lenguajes = lenguajes
+            }
         }
 
         const empleado1 = new Empleado("Karina",23,1,"Gerente","Amazon")
         const empleado2 = new Empleado("Ricardo",25,2,"Gerente","Amazon")
+        const noEmpleado1 = new NoEmpleado("Juanito",18,"Estudiante de programación")
+        const niño = new Persona("Javier",5)
+        const javier = new Desarrollador("Javier",25,5,"Desarrollador","Google","Senior",["JavaScript","Go","Java","HTML"])
 
         console.log(empleado1)
         console.log(empleado2)
+        console.log(noEmpleado1)
+        console.log(javier)
+
+        empleado1.saludar()
+        empleado2.cobrarDinero()
+        noEmpleado1.enviarCurriculum()
+
+        const empleados = [empleado1,empleado2]
+
+        console.log(empleados)
+
+
     </script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            #hambre = true
+
+            constructor(nombre,color,tamaño,edad,carnivoro,sonido){
+                this.nombre = nombre
+                this.color = color
+                this.tamaño = tamaño
+                this.edad = edad
+                this.carnivoro = carnivoro
+                this.sonido = sonido
+            }
+
+            hacerSonido(){
+                console.log(this.sonido)
+            }
+
+            alimentar(){
+                if(this.#hambre){
+                    console.log("Comiendo....")
+                    this.#hambre = false
+                    console.log("Termino de comer....")
+                }else{
+                    console.log("Ignorando comida....")
+                }
+            }
+
+            // Atributos privados: ES2019 / ES10
+            #hacerDelBaño(){
+                console.log("Haciendo del baño...")
+            }
+            
+        }
+
+        const perro = new Animal("Coco","Negro","Mediano",5,true,"Guau")
+        perro.alimentar()
+        perro.alimentar()
+
+        // getters y setters
+    </script>
+</body>
+</html>
