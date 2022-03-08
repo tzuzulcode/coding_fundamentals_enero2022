@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CuentaBancaria{
+            #saldoLimite = 10000
+            #saldoMinimo = 0
+            #saldo = 0
+
+            //setter indica una propiedad de solo escritura
+            set saldo(newSaldo){
+                if(newSaldo<this.#saldoMinimo){
+                    console.log("No puede ser menor a cero")
+                    this.#saldo = this.#saldoMinimo
+                }else if(newSaldo>this.#saldoLimite){
+                    this.#saldo = this.#saldoLimite
+                }else{
+                    this.#saldo = newSaldo
+                }
+            }
+
+            //getter indica una propiedad de solo lectura
+            get saldo(){
+                return "Tu saldo es: "+this.#saldo
+            }
+
+
+            //Definiendo ambos, indica una propiedad de escritura y lectura controlada
+        }
+
+        // ES6
+        const cuenta1 = new CuentaBancaria()
+        cuenta1.saldo = 1000
+
+        console.log(cuenta1.saldo)
+    </script>
+</body>
+</html>

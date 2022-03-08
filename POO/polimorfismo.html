@@ -51,15 +51,62 @@
                 console.log("Cazando a la presa...")
                 this.alimentar()
             }
+
+            alimentar(){
+                super.alimentar()
+                console.log("Comiendo... Modificado....")
+            }
+
+            
         }
 
-        const perro = new Animal("Coco","Negro","Mediano",5,true,"Guau")
-        const tigre = new Felino("Tigre","Naranja","GRande",5,true,"Grrr")
-        perro.alimentar()
-        perro.alimentar()
-        tigre.cazar()
+        class Reptil extends Animal{
+            constructor(nombre,color,tamaño,edad,carnivoro,sonido){
+                super(nombre,color,tamaño,edad,carnivoro,sonido)
 
-        // getters y setters
+            }
+
+            salirAlSol(){
+                console.log("Calentando...")
+            }
+        }
+
+
+        const tigre = new Felino("Tigre","Naranja","GRande",5,true,"Grrr")
+        const iguana = new Reptil("Iguana","Verde","Pequeño",5,true,"Grrr")
+        
+        //En JavaScript esto es posible
+        const pez = {
+            hambre:false,
+            nombre:"Delfín",
+            color:"azul",
+            alimentar(){
+                if(this.hambre){
+                    console.log("Pececito comiendo...")
+                }else{
+                    console.log("Ignorando comida....")
+                }
+            }
+        }
+
+        // Los lenguajes tradicionales hacen un cast (casting)
+        const listaAnimales = [tigre,iguana,pez]
+
+        console.log(listaAnimales)
+
+        for(let i=0;i<listaAnimales.length;i++){
+            console.log(listaAnimales[i].nombre)
+
+            // ¿listaAnimales[i].cazar esta definido? Si es undefined, no se ejecuta el metodo
+            if(listaAnimales[i].cazar){
+                listaAnimales[i].cazar()
+            }
+            // console.log(listaAnimales[i].cazar)
+            listaAnimales[i].alimentar()
+        }
+
+
+
     </script>
 </body>
 </html>

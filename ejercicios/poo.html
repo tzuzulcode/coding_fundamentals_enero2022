@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Escriba un programa para imprimir el área y el perímetro de un triángulo que tenga lados de 3, 4 y 5 unidades creando una clase llamada 'Triángulo' sin ningún parámetro en su constructor
+        class Triangulo{
+            lado1 = 3
+            lado2 = 4
+            lado3 = 5
+
+            calcularArea(){
+                // const resultadoFormula = (Math.pow(this.lado2,2)+Math.pow(this.lado3,2) - Math.pow(this.lado1,2))/(2*this.lado2*this.lado3)
+                // return Math.acos(resultadoFormula)
+
+                const s = (this.lado1+this.lado2+this.lado3)/2
+                const resultadoFormula = s*(s-this.lado1)*(s-this.lado2)*(s-this.lado3)
+                const area = Math.sqrt(resultadoFormula)
+
+                return area
+
+            }
+
+            calcularPerimetro(){
+                return this.lado1+this.lado2+this.lado3
+            }
+        }
+
+        const triangulo = new Triangulo()
+    </script>
+</body>
+</html>
