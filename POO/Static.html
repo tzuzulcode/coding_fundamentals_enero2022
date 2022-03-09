@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Métodos estáticos
+        JSON.stringify()
+        Object.keys()
+        Math.sqrt()
+        Date.now()
+
+        const date = new Date()
+        date.getDay() //Tiene metodos
+
+        const json = new JSON() // No tiene metodos. Todos son estáticos
+
+
+        class User{
+            static ciudad = "México"
+            constructor(nombre,edad,genero,email){
+                this.nombre = nombre
+                this.edad = edad
+                this.genero = genero
+                this.email = email
+            }
+            save(){
+                console.log("Guardando usuario...")
+            }
+
+            static readAll(){
+
+            }
+        }
+        const user = new User("Tzuzul",23,"M","tzuzul@email.com")
+        user.save()
+
+        // Método estático, no necesitamos la instancia para usarlo
+        User.readAll()
+
+        User.readAll()
+
+        User.ciudad
+
+    </script>
+</body>
+</html>
