@@ -1,6 +1,6 @@
 class Coordinate{
     constructor (x,units){
-        this.x = x
+        this.x = x+1
         this.units = units
     }
 
