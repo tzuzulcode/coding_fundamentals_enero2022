@@ -23,31 +23,46 @@ const simulation = new Simulation(apples,oranges,appleTree,orangeTree)
 
 const startBtn = document.getElementById("start")
 const app = document.getElementById("app")
+const results = document.getElementById("results")
+
+
+function createElement(className,start,end){
+    const element = document.createElement("div")
+    element.className = className
+    element.style.gridColumnStart = start
+    element.style.gridColumnEnd = end
+    app.appendChild(element)
+}
 
 startBtn.onclick = function(){
     // alert("Dio click")
     //Creando y agregando el arbol de manzanas
-    const appleTree = document.createElement("div")
-    appleTree.className = "tree"
-    appleTree.style.gridColumnStart = simulation.appleTreePos.x
-    appleTree.style.gridColumnEnd = simulation.appleTreePos.x
-    app.appendChild(appleTree)
+    createElement("tree appleTree",simulation.appleTreePos.x,simulation.appleTreePos.x)
 
+    //Creando casa
+    createElement("house",startHome,endHome)
+    
     //Creando y agregando el arbol de naranjas
-    const orangeTree = document.createElement("div")
-    orangeTree.className = "tree"
-    orangeTree.style.gridColumnStart = simulation.orangeTreePos.x
-    orangeTree.style.gridColumnEnd = simulation.orangeTreePos.x
-    app.appendChild(orangeTree)
+    createElement("tree orangeTree",simulation.orangeTreePos.x,simulation.orangeTreePos.x)
+
 
     //Creando y agregando las manzanas
     for(let apple of simulation.apples){
-        const appleDiv = document.createElement("div")
-        appleDiv.className = "apple"
-        appleDiv.style.gridColumnStart = apple.x
-        appleDiv.style.gridColumnEnd = apple.x
-        app.appendChild(appleDiv)
+        createElement("apple",apple.x,apple.x)
     }
 
-    console.log(simulation.simulate(startHome,endHome))
+    //Creando y agregando las naranjas
+    for(let orange of simulation.oranges){
+        createElement("orange",orange.x,orange.x)
+    }
+
+    const fruitsInHome = simulation.simulate(startHome,endHome)
+
+    const resultadoManzanas = document.createElement("h2")
+    resultadoManzanas.innerText = "Manzanas dentro de la casa: "+fruitsInHome[0]
+    results.appendChild(resultadoManzanas)
+    const resultadoNaranjas = document.createElement("h2")
+    resultadoNaranjas.innerText = "Naranjas dentro de la casa: "+fruitsInHome[1]
+    results.appendChild(resultadoNaranjas)
+
 }

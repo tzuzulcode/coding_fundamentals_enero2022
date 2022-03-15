@@ -1,0 +1,53 @@
+#app{
+    /* background-color: aqua; */
+    display: grid;
+    /* fr -> fraction */
+    grid-template-columns: repeat(21,1fr);
+}
+/* p{
+    background-color: aquamarine;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+} */
+
+.house{
+    height: 100px;
+    background: url(https://www.resideo.com/us/en/-/media/Resideo/The%20Supported%20Home%20Images/background/solutions-home-example.svg?rv=a58f0cd7a8f5473dad717ebc0100bfcf);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.tree{
+    background-color: black;
+    height: 100px;
+}
+
+.appleTree{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8T9rPUWgumelIUuByuonO2aAnVJOIBSKLUG9Gk8Yy9uN_4UBG9LlEp29iJC-qAE4i3gU&usqp=CAU);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.orangeTree{
+    background: url(https://as1.ftcdn.net/jpg/01/34/80/52/500_F_134805213_XOn0yiaX4dtn6nZKMhsbsT5NzQo3gOv4.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.apple{
+    background: url(https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g=);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 30px;
+}
+.orange{
+    background: url(https://www.boeschbodenspies.com/wp-content/uploads/2017/08/orange.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 30px;
+}
