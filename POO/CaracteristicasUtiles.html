@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const personaje = {
+            name :"Tzuzul",
+            // data:{
+            //     raza:"mago",
+            //     tipo:"humano",
+            //     // arma:{
+            //     //     tipo:"magica",
+            //     //     nombre:"baculo",
+            //     //     peso:134,
+            //     //     attack: 13
+            //     // }
+            // },
+            vida:500,
+            ataque:30,
+            armadura:70,
+            atuendo:{
+                botas:true,
+                pantalon:"cuero",
+                casco:"acero"
+            }
+        }
+
+        if(personaje.data){
+            console.log(personaje.data.raza)
+        }
+        if(personaje.data!==undefined){
+            console.log(personaje.data.raza)
+        }
+        if("data" in personaje){
+            console.log(personaje.data.raza)
+        }
+        if(personaje.hasOwnProperty("data")){
+            console.log(personaje.data.raza)
+        }
+        
+        const raza = personaje.data && personaje.data.raza
+        console.log(raza)
+        
+
+        // ES2020
+        // Conditional chaining
+        //const attack = personaje.data && personaje.data.arma && personaje.data.arma.attack
+        const attack = personaje.data?.arma?.attack
+        console.log(attack)
+
+
+        //delete personaje["name"]
+        delete personaje.name
+
+        console.log(personaje)
+        
+        
+    </script>
+</body>
+</html>
