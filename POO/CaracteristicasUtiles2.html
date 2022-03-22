@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persona = {
+            0:"Tzuzul",
+            1:"Otro valor",
+            2:"Otro valor",
+            4:"Otro valor",
+            3:"Otro valor",
+            age:23,
+            name:"Tzuzul",
+            city:"Ciudad de México"
+        }
+
+        console.log(Object.keys(persona))
+
+
+        //Enumaration order:
+
+
+        let numericProperties = []
+        let stringProperties = []
+
+        for(let key of Object.keys(persona)){
+            if(Number.isInteger(Number(key))){
+                numericProperties.push(key)
+            }else{
+                stringProperties.push(key)
+            }
+        }
+
+        console.log(numericProperties)
+
+        //sort(): Ordena el arreglo
+        console.log(stringProperties.sort())
+
+        //concat(): Une otro arreglo al arreglo
+        const orderedProperties = numericProperties.concat(stringProperties.sort())
+
+        console.log(orderedProperties)
+
+
+        console.log(Object.keys(persona).sort())
+
+        // Extending objects:
+
+        persona.age=persona.age.toString() // "23"
+
+        // Si no existe la key email, agrega esa propiedad
+        persona.email = "mail@tzuzulcode.com"
+        persona.direccion = {
+            calle:"Calle",
+            numero:10101,
+            colonia:"Colonia"
+        }
+
+        console.log(Object.keys(persona))
+
+
+        // Serializing objects
+        // ¿JSON?
+
+    </script>
+</body>
+</html>

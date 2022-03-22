@@ -9,12 +9,32 @@
 <body>
     <script>
         // Usaremos cuando necesitemos la información
-        var alumnos = ["Valentina","Mayerlis","Gvstavo","Leandro","Gideon","Anthony","Jose Alexis"]
-        for(var alumno of alumnos){
+        const alumnos = ["Valentina","Mayerlis","Gvstavo","Leandro","Gideon","Anthony","Jose Alexis"]
+        for(let alumno of alumnos){
             console.log(`Hola 👋 ${alumno}`)
         }
 
-        // TODO: Regresar más adelante
+        // Podemos hacer lo mismo con un objecto
+        const alumno = {
+            name:"Gustavo",
+            edad:26,
+            ciudad:"Cali, Colombia"
+        }
+        const alumno2 = {
+            name:"Gustavo",
+            ciudad:"Cali, Colombia",
+            edad:26
+        }
+
+        for(let propiedad of Object.keys(alumno)){
+            console.log(alumno[propiedad])
+        }
+        for(let value of Object.values(alumno)){
+            console.log(value)
+        }
+        for(let [key,value] of Object.entries(alumno)){
+            console.log(key,value)
+        }
     </script>
 </body>
 </html>

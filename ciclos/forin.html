@@ -14,7 +14,22 @@
             console.log(`Hola 👋 ${alumnos[i]} eres el alumno ${i}`)
         }
 
-        // TODO: Regresar más adelante
+        // Podemos hacer lo mismo con un objecto
+
+        const alumno = {
+            name:"Gustavo",
+            edad:26,
+            ciudad:"Cali, Colombia"
+        }
+
+        for(let propiedad in alumno){
+            console.log(alumno[propiedad])
+        }
+        
+        for(let key in Object.keys(alumno)){
+            console.log(alumno[Object.keys(alumno)[key]])
+        }
+
     </script>
 </body>
 </html>

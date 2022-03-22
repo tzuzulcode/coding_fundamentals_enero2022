@@ -29,7 +29,29 @@
                 casco:"acero"
             }
         }
+        const personaje2 = {
+            name :"Gustavo",
+            // data:{
+            //     raza:"mago",
+            //     tipo:"humano",
+            //     // arma:{
+            //     //     tipo:"magica",
+            //     //     nombre:"baculo",
+            //     //     peso:134,
+            //     //     attack: 13
+            //     // }
+            // },
+            vida:500,
+            ataque:30,
+            armadura:70,
+            atuendo:{
+                botas:true,
+                pantalon:"cuero",
+                casco:"acero"
+            }
+        }
 
+        //Verificar propiedades
         if(personaje.data){
             console.log(personaje.data.raza)
         }
@@ -50,15 +72,58 @@
         // ES2020
         // Conditional chaining
         //const attack = personaje.data && personaje.data.arma && personaje.data.arma.attack
-        const attack = personaje.data?.arma?.attack
-        console.log(attack)
+        const attack = personaje.data?.arma?.attack ?? 0
+        console.log("Ataque",attack)
 
 
         //delete personaje["name"]
         delete personaje.name
 
         console.log(personaje)
+
+
+        //Enumerar propiedades
+        const personajes = [personaje,personaje2]
+
+
+        for(let p of personajes){
+            for(let propiedad in p){
+                console.log(propiedad,p[propiedad])
+            }
+        }
+
+        for(let p of personajes){
+            //Itera sonbre las keys o propiedades
+            for(let propiedad of Object.keys(p)){
+                console.log(propiedad,p[propiedad])
+            }
+        }
+        for(let p of personajes){
+            //Itera sobre el valor almacenado en la propiedad
+            for(let value of Object.values(p)){
+                console.log(value)
+            }
+        }
+
+        //Tomando keys y values
+        for(let p of personajes){
+            //Itera sobre las keys y los values
+            for(let [key,value] of Object.entries(p)){
+                console.log(key,value)
+            }
+        }
+
+
+        //Object.keys
+        console.log(Object.keys(personaje))
+        //Object.values
+        console.log(Object.values(personaje))
+        //Object.entries
+        console.log(Object.entries(personaje))
+
+
         
+
         
     </script>
 </body>
