@@ -66,6 +66,19 @@
 
         // Serializing objects
         // ¿JSON?
+     
+        const personaJSON = {
+            "age":23,
+            "name":"Tzuzul",
+            "city":"Ciudad de México"
+        }   
+        
+        
+        const conversion = JSON.stringify(persona)
+        console.log(conversion)
+
+        const objeto = JSON.parse(conversion)
+        console.log(objeto)
 
     </script>
 </body>
