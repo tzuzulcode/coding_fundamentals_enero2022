@@ -7,8 +7,85 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button id="button">Aceptar</button>
+    
     <script>
         
+        ()=>{
+            
+        }// Funcion sin nombre
+        
+        const button = document.getElementById("button")
+        
+        // button.onclick = function(){
+            //     alert("Hola")
+            // } // funcion sin nombre: funcion anónima
+            
+            button.onclick= ()=>{
+                alert("Hola")
+            } // Onclick con arrow function
+            
+            
+            
+        //hacerAlgo()
+        
+        function hacerAlgo(){
+            alert("Funcion tradicional")
+        } // Hace hoisting
+        
+
+        const hacerAlgoFunction = function(){
+            alert("Funcion tradicional anonima")
+        } //No hacen hoisting
+
+        //Arrow functions
+        const hacerAlgoArrowFunction = ()=>{
+            alert("Arrow function")
+        } //No hacen hoisting
+
+        //Hoisting: Elevación
+
+        //Declarar y luego utilizar
+        //hacerAlgoFunction()
+        //hacerAlgoArrowFunction();
+
+        function algo(){
+            function algo2(){
+                function algo2(){
+            
+                }
+            }
+        }
+
+        // Forma clasica
+        const saludar = (nombre) =>{
+            console.log("Hola",nombre)
+        }
+        // Un solo parametro
+        const saludarUnParametro = nombre =>{
+            console.log("Hola",nombre)
+        }
+
+        saludar("Tzuzul")
+        saludarUnParametro("Diana")
+
+        // Dos o más parametros, es obligatorio poner parentesis
+        const operacion = (valor1,valor2)=>{
+            return valor1+valor2
+        }
+
+        //Solo hacemos un return: No es necesario ponerlo (return implicito)
+        const operacionReturn = (valor1,valor2)=>valor1+valor2
+        
+        console.log(operacion(5,5))
+        console.log(operacionReturn(5,5))
+
+        //La mas forma mas resumida: un solo parametro y return por defecto
+        const operacionCorta= valor=>valor*valor
+
+        console.log(operacionCorta(5))
+
     </script>
 </body>
 </html>
