@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Devolver un objeto
+        // const crearObjeto = (nombre)=>{
+        //     return {
+        //         id:"id-"+nombre,
+        //         name:nombre
+        //     }
+        // }
+
+        // const crearObjeto = nombre => {
+        //     id:"id-"+nombre
+        // } // No es correcto, no devuelve nada
+
+        const crearObjeto = nombre => ({
+                id:"id-"+nombre,
+                name:nombre
+            }) // Lo que va entre parentesis es una expresion a resolver
+
+        const operacion = (3+5)*5
+
+        console.log(crearObjeto("Tzuzul"))
+
+        //Callback: Es pasar como parametro la referencia una funcion a otra funcion para ejecutarla
+        //Objetivo: crear funciones más reutilizables
+
+        function lanzarMensaje(){
+            alert("Saludo")
+        }
+
+        //lanzarMensaje es un callback
+        //setInterval(lanzarMensaje,5000)// time in ms: 5000ms -> 5s
+
+
+        //Crear un callback
+        const formatObjectV1 = (object) => {
+            let string = ""
+
+            for(let [key,value] of Object.entries(object)){
+                string += `${key}: ${value} | `
+            }
+
+            return string
+        }
+        const formatObjectV2 = (object) => {
+            let string = ""
+
+            for(let [key,value] of Object.entries(object)){
+                console.log(value)
+                string += `${key}: ${value} , `
+            }
+
+            return string
+        }
+
+        console.log(formatObjectV2({name:"Tzuzul",age:23}))
+
+
+        const mostrarDatos = (formatFunction,object) =>{
+            console.log(typeof formatFunction)
+            document.write(formatFunction(object))
+        }
+
+        mostrarDatos(formatObjectV1,{name:"Tzuzul",age:23})
+        mostrarDatos(formatObjectV2,{name:"Tzuzul",age:23})
+
+        // Funciones utiles en JS
+
+        // Funciones relacionadas a arrays:
+
+        const fruits = ["🍎","🍊","🍉","🍌","🍓","🍇","🫐","🍐"]
+
+        console.log(fruits)
+
+        // Iterar sobre cada uno de los elementos
+        // for(let fruit of fruits){
+        //     console.log(fruit)
+        // }
+
+        // Iterar sobre cada uno de los elementos
+        fruits.forEach(fruit=>{
+            console.log(fruit)
+        })
+
+    </script>
+</body>
+</html>
