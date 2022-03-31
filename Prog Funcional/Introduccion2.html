@@ -76,7 +76,7 @@
 
         // Funciones relacionadas a arrays:
 
-        const fruits = ["🍎","🍊","🍉","🍌","🍓","🍇","🫐","🍐"]
+        const fruits = ["🍎","🍊","🍉","🍎","🍌","🍓","🍇","🫐","🍐","🍎","🍊","🍉","🍌","🍓","🍇","🫐","🍐"]
 
         console.log(fruits)
 
@@ -89,6 +89,82 @@
         fruits.forEach(fruit=>{
             console.log(fruit)
         })
+
+        //Devuelve un nuevo arreglo con los datos modificados
+        // const comiendoFrutas = fruits.map(function(fruit){
+        //     return "Comiendo una fruta: "+fruit
+        // })
+
+        // Esto es lo mismo que la funcion de arriba
+        const comiendoFrutas = fruits.map(fruit=>"Comiendo una fruta: "+fruit)
+
+        console.log(comiendoFrutas)
+
+        // Agrega a un nuevo arreglo los elementos que coinciden con la condicion
+        // const frutasFiltradas = fruits.filter(function(fruit){
+        //     return fruit==="🍎"
+        // })
+        const frutasFiltradas = fruits.filter(fruit=>fruit==="🍎"||fruit==="🍉")
+
+        console.log(frutasFiltradas)
+
+        // Uniendo funciones para arreglos
+
+        fruits.filter(fruit=>fruit==="🍎"||fruit==="🍉")
+        .map(fruit=>fruit==="🍎"?"🍏":"🍍")
+        .forEach(fruit=>{
+            document.write(`<p>${fruit}</p>`)
+        })
+
+        //Reducir todo el arreglo a un solo valor
+
+        const apples = fruits.reduce((pv,fruit)=>{
+            console.log(pv)
+            if(fruit==="🍎"&&pv==="🍎"){
+                return 2
+            }else if(fruit==="🍎"){
+                return pv+1
+            }else{
+                return pv
+            }
+        })
+
+        
+        console.log(apples)
+        
+        const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,5,4,3,2,1]
+        const orderedFruits = fruits.sort()
+        
+        console.log(orderedFruits)
+        console.log(numbers.sort())
+        
+        
+        const orderedFruitsCustom = fruits.sort((fruit1,fruit2)=>{
+            
+            console.log("Frutas:")
+            console.log(fruit1)
+            console.log(fruit2)
+
+
+            return -1
+
+        })
+        const orderedNumbersCustom = numbers.sort((n1,n2)=>{
+            
+            console.log("Frutas:")
+            console.log(n1)
+            console.log(n2)
+
+
+            //Numero negativo: n1 va antes que n2 -> descendente
+            //Numero positivo: n2 va antes que n1 -> ascendente
+            return n2-n1
+
+        })
+
+        console.log(orderedNumbersCustom)
+
+        
 
     </script>
 </body>
