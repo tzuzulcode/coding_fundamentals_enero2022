@@ -41,24 +41,35 @@
 
 
         //Crear un callback
-        const formatObjectV1 = (object) => {
-            let string = ""
+        const formatObjectV1 = (error,object) => {
 
-            for(let [key,value] of Object.entries(object)){
-                string += `${key}: ${value} | `
-            }
+            if(error){
+                console.log(error)
+            }else{
+                let string = ""
 
-            return string
+                for(let [key,value] of Object.entries(object)){
+                    string += `${key}: ${value} | `
+                }
+
+                return string
+            }  
         }
-        const formatObjectV2 = (object) => {
-            let string = ""
 
-            for(let [key,value] of Object.entries(object)){
-                console.log(value)
-                string += `${key}: ${value} , `
+        // Error first callback
+        const formatObjectV2 = (error,object) => {
+            if(error){
+                console.log(error)
+            }else{
+                let string = ""
+
+                for(let [key,value] of Object.entries(object)){
+                    console.log(value)
+                    string += `${key}: ${value} , `
+                }
+
+                return string
             }
-
-            return string
         }
 
         console.log(formatObjectV2({name:"Tzuzul",age:23}))
@@ -66,7 +77,8 @@
 
         const mostrarDatos = (formatFunction,object) =>{
             console.log(typeof formatFunction)
-            document.write(formatFunction(object))
+            formatFunction({error:true,message:"Hubo un error"},null)
+            //document.write(formatFunction(null,object))
         }
 
         mostrarDatos(formatObjectV1,{name:"Tzuzul",age:23})
