@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Desestructuración
+        //Destructuring
+        // Funciona en Objetos y arreglos
+        const persona = {
+            nombre:"Tzuzul",
+            direccion:{
+                calle:"Calle",
+                numero:19191,
+                cp:123123
+            }
+        }
+
+        // Desestructuración consta de dos pasos
+        // 1. Leer la propiedad del objeto o arreglo
+        // 2. Asignar la propiedad leida en una variable o constante
+        const {cp} = persona.direccion
+
+        console.log(cp)
+
+
+        //La desestructuración se utiliza mucho con funciones:
+        function userData(){
+            return {
+                success:true,
+                data:{
+                    name:"Tzuzul"
+                },
+                message:"Usuario obtenido correctamente"
+            }
+        }
+
+
+        //Forma larga
+        const data = userData()
+        const message = data.message
+
+        // const {message} = userData()
+
+        // Los dos puntitos indican renombrar la variable o constante
+        const {message:message2} = userData()
+
+        console.log(message2)
+
+        //Extrayendo datos anidados
+        // Si despues de los dos puntitos hay llaves, estamos extrayendo una propiedad anidada
+        // const {data:{name}} = userData()
+        const {data:{name:nombre}} = userData()
+
+        console.log(nombre)
+
+
+        //Destructuring con arreglos
+        const numbers = [1,2,3,4,5]
+        
+        // const uno = numbers[0]
+        // const dos = numbers[1]
+        // const tres = numbers[2]
+
+        const [uno,dos,tres] = numbers
+
+        console.log(uno)
+        console.log(dos)
+        console.log(tres)
+
+
+        // Operador spread
+
+        const max = Math.max(...numbers)
+
+        
+        // Copia de un arreglo
+
+        const copiaArray = [...numbers]
+        // const copiaArray = numbers
+
+        console.log(numbers===copiaArray)
+        
+
+        function printUser(nombre,edad,genero,ciudad){
+            console.log(nombre,edad,genero,ciudad)
+        }
+
+        const userDataArray = ["Tzuzul",23,"M","Ciudad de México"]
+
+        const userDataObject = {
+            name:"Tzuzul",
+            age:23,
+            genre:"M",
+            city:"Ciudad de México"
+        }
+
+        const copiaObject = {...userDataObject}
+
+        printUser(...userDataArray)
+
+        printUser(...Object.values(userDataArray))
+
+
+    </script>
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
