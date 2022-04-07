@@ -45,3 +45,6 @@ fetch("https://rickandmortyapi.com/api")
     mensaje.innerText = "Ocurrio un error al pedir la información"
     app.appendChild(mensaje)
 }) // Gestionamos el error
+.finally(()=>{
+    console.log("Se ha terminado la función")
+})
